@@ -39,6 +39,7 @@ class HomePage: UIViewController, UITableViewDataSource {
             self?.tableView.reloadData()
         }
     }
+    
     func updateToDosTV(data: [ToDo]) {
         
         toDos = data

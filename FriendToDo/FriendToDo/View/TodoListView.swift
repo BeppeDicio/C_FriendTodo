@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TodoListView: UIViewController, UITableViewDataSource {
+class TodoListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var friend:Friend?
     var tasks:[ToDo] = []
@@ -24,6 +24,7 @@ class TodoListView: UIViewController, UITableViewDataSource {
         
         selectFriendTasks()
         
+        taskTableView.delegate = self
         taskTableView.dataSource = self
         print("this are the todos \(tasks)")
     }
@@ -35,10 +36,35 @@ class TodoListView: UIViewController, UITableViewDataSource {
             }
         }
         
+        updateTasks(data: friendTasks)
+        
+    }
+    
+    func updateTasks(data: [ToDo]) {
+        
+        friendTasks = data
+        
         friendTasks = friendTasks.sorted { (lhs, rhs) -> Bool in
             return (!lhs.completed) && (rhs.completed)
-            
         }
+        
+        DispatchQueue.main.async {
+            [weak self] in
+            self?.taskTableView.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if (!self.friendTasks[indexPath.row].completed) {
+            self.friendTasks[indexPath.row].completed = true
+        } else if (self.friendTasks[indexPath.row].completed){
+            self.friendTasks[indexPath.row].completed = false
+        }
+        
+        taskTableView.reloadData()
+        
+        //TODO: resort the task by having all the not done at the start of the list and after the done ones
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

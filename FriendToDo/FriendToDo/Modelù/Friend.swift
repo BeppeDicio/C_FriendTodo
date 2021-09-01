@@ -9,11 +9,11 @@ import Foundation
 
 // MARK: - Friend
 class Friend: Codable {
-    let id: Int
-    let name, username, email: String
-    let address: Address
-    let phone, website: String
-    let company: Company
+    var id: Int
+    var name, username, email: String
+    var address: Address
+    var phone, website: String
+    var company: Company
 
     init(id: Int, name: String, username: String, email: String, address: Address, phone: String, website: String, company: Company) {
         self.id = id
@@ -29,8 +29,8 @@ class Friend: Codable {
 
 // MARK: - Address
 class Address: Codable {
-    let street, suite, city, zipcode: String
-    let geo: Geo
+    var street, suite, city, zipcode: String
+    var geo: Geo
 
     init(street: String, suite: String, city: String, zipcode: String, geo: Geo) {
         self.street = street
@@ -43,7 +43,7 @@ class Address: Codable {
 
 // MARK: - Geo
 class Geo: Codable {
-    let lat, lng: String
+    var lat, lng: String
 
     init(lat: String, lng: String) {
         self.lat = lat
@@ -53,7 +53,7 @@ class Geo: Codable {
 
 // MARK: - Company
 class Company: Codable {
-    let name, catchPhrase, bs: String
+    var name, catchPhrase, bs: String
 
     init(name: String, catchPhrase: String, bs: String) {
         self.name = name
