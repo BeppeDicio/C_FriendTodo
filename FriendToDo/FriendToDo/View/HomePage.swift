@@ -80,6 +80,7 @@ class HomePage: UIViewController, UITableViewDataSource {
         let tabCtrl: UITabBarController = segue.destination as! UITabBarController
         let vc = tabCtrl.viewControllers![0] as! TodoListView
         vc.friend = friendsList[self.tableView.indexPathForSelectedRow!.row]
+        vc.tasks = self.toDos
     }
 }
 
