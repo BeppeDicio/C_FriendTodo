@@ -89,11 +89,9 @@ class TodoListView: UIViewController, UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            print(friendTasks[indexPath.row].title)
             self.friendTasks.remove(at: indexPath.row)
-            print(friendTasks[indexPath.row].title)
             updateTasks()
-            print("indexPath \(indexPath.row)")
+            //TODO: add API call to delete the task on server side
         }
     }
 }
