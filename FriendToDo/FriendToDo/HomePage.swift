@@ -17,8 +17,6 @@ class HomePage: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TableViewCell")
-        
         tableView.dataSource = self
     }
     
@@ -31,8 +29,11 @@ class HomePage: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
-        cell.textLabel?.text = self.tableViewData[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomFriendTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
+        cell.friendName.text = self.tableViewData[indexPath.row]
         return cell
     }
 
