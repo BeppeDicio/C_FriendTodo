@@ -40,4 +40,35 @@ class DataReciver {
         
         task.resume()
     }
+    
+    //TODO: refactor this class to deleta the dependency on the HomePage class and code duplication
+    public func getFriendTasks(urlString: String, context: HomePage){
+        
+        var toDos = [ToDo]()
+        let decoder = JSONDecoder()
+        var toDoData = Data()
+        
+        
+        let urlStringTest = URL(string: urlString)!
+
+        let task = URLSession.shared.dataTask(with: urlStringTest) {(data, response, error) in
+            guard let data = data else { return }
+            toDoData = data
+            print(String(data: data, encoding: .utf8)!)
+            
+            if !toDoData.isEmpty {
+                do {
+                    toDos = try decoder.decode([ToDo].self, from: toDoData)
+                    context.updateToDosTV(data: toDos)
+                } catch {
+                    //TODO: manage loading error
+                    print(error)
+                }
+            } else {
+                //TODO: empty friends list
+            }
+        }
+        
+        task.resume()
+    }
 }

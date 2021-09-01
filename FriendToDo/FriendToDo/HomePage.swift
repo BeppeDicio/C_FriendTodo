@@ -13,6 +13,7 @@ class HomePage: UIViewController, UITableViewDataSource {
     @IBOutlet weak var friendsLabel: UILabel!
     
     var friendsList: [Friend] = []
+    var toDos: [ToDo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class HomePage: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
     
         dataReciver.getUserData(urlString: Urls.FriendsURL, context: self)
+        dataReciver.getFriendTasks(urlString: Urls.ToDoURL, context: self)
         
     }
     
@@ -37,6 +39,15 @@ class HomePage: UIViewController, UITableViewDataSource {
             self?.tableView.reloadData()
         }
     }
+    func updateToDosTV(data: [ToDo]) {
+        
+        toDos = data
+        
+        DispatchQueue.main.async {
+            [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.friendsList.count
@@ -47,7 +58,16 @@ class HomePage: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomFriendTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
+        var count: Int = 0
+        
+        for toDo in self.toDos {
+            if(toDo.userID == self.friendsList[indexPath.row].id) {
+                count = count + 1
+            }
+        }
+        
         cell.friendName.text = self.friendsList[indexPath.row].name
+        cell.toDosLabel.text = "You have \(count) with this friend!"
         return cell
     }
 
