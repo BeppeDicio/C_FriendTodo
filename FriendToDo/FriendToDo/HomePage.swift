@@ -17,6 +17,10 @@ class HomePage: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let dataReciver = DataReciver()
+        
+        dataReciver.getUserData(urlString: "", context: self)
+        
         tableView.dataSource = self
     }
     
