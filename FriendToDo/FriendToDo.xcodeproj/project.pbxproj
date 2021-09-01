@@ -19,6 +19,7 @@
 		D9B4B8EE26DF6A7300FF3306 /* CustomFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8ED26DF6A7300FF3306 /* CustomFriendTableViewCell.swift */; };
 		D9B4B8F026DF732800FF3306 /* DataReciver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8EF26DF732800FF3306 /* DataReciver.swift */; };
 		D9B4B8F226DF734C00FF3306 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8F126DF734C00FF3306 /* Friend.swift */; };
+		D9B4B8F426DF7E3A00FF3306 /* GlobalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8F326DF7E3A00FF3306 /* GlobalUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D9B4B8ED26DF6A7300FF3306 /* CustomFriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFriendTableViewCell.swift; sourceTree = "<group>"; };
 		D9B4B8EF26DF732800FF3306 /* DataReciver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReciver.swift; sourceTree = "<group>"; };
 		D9B4B8F126DF734C00FF3306 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		D9B4B8F326DF7E3A00FF3306 /* GlobalUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				D9B4B8ED26DF6A7300FF3306 /* CustomFriendTableViewCell.swift */,
 				D9B4B8EF26DF732800FF3306 /* DataReciver.swift */,
 				D9B4B8F126DF734C00FF3306 /* Friend.swift */,
+				D9B4B8F326DF7E3A00FF3306 /* GlobalUtility.swift */,
 			);
 			path = FriendToDo;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				D9B4B8EE26DF6A7300FF3306 /* CustomFriendTableViewCell.swift in Sources */,
 				D9B4B8F226DF734C00FF3306 /* Friend.swift in Sources */,
 				D9B4B8C026DE095400FF3306 /* ViewController.swift in Sources */,
+				D9B4B8F426DF7E3A00FF3306 /* GlobalUtility.swift in Sources */,
 				D9B4B8F026DF732800FF3306 /* DataReciver.swift in Sources */,
 				D9B4B8BC26DE095400FF3306 /* AppDelegate.swift in Sources */,
 				D9B4B8BE26DE095400FF3306 /* SceneDelegate.swift in Sources */,

@@ -9,7 +9,8 @@ import Foundation
 
 class DataReciver {
     
-    public func getUserData(urlString: String) -> [Friend]{
+    //TODO: refactor this class to deleta the dependency on the HomePage class
+    public func getUserData(urlString: String, context: HomePage){
         
         var friends = [Friend]()
         let decoder = JSONDecoder()
@@ -26,17 +27,17 @@ class DataReciver {
             if !friendsData.isEmpty {
                 do {
                     friends = try decoder.decode([Friend].self, from: friendsData)
-                    print(friends[0].id)
+                    context.updateTV(data: friends)
+                    //print(friends[0].id)
                 } catch {
+                    //TODO: manage loading error
                     print(error)
                 }
             } else {
-                
+                //TODO: empty friends list
             }
         }
         
         task.resume()
-        
-        return friends
     }
 }
