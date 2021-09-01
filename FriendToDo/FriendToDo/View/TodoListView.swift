@@ -22,7 +22,9 @@ class TodoListView: UIViewController, UITableViewDataSource, UITableViewDelegate
             
         friendName.text = friend?.name
         
-        selectFriendTasks()
+        if(friendTasks.isEmpty){
+            selectFriendTasks()
+        }
         
         taskTableView.delegate = self
         taskTableView.dataSource = self
@@ -36,13 +38,11 @@ class TodoListView: UIViewController, UITableViewDataSource, UITableViewDelegate
             }
         }
         
-        updateTasks(data: friendTasks)
+        updateTasks()
         
     }
     
-    func updateTasks(data: [ToDo]) {
-        
-        friendTasks = data
+    func updateTasks() {
         
         friendTasks = friendTasks.sorted { (lhs, rhs) -> Bool in
             return (!lhs.completed) && (rhs.completed)
@@ -62,9 +62,7 @@ class TodoListView: UIViewController, UITableViewDataSource, UITableViewDelegate
             self.friendTasks[indexPath.row].completed = false
         }
         
-        taskTableView.reloadData()
-        
-        //TODO: resort the task by having all the not done at the start of the list and after the done ones
+        updateTasks()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,12 +74,26 @@ class TodoListView: UIViewController, UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! CustomTodoCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        cell.taskTitleLabel.text = self.tasks[indexPath.row].title
+        cell.taskTitleLabel.text = self.friendTasks[indexPath.row].title
         if (!self.friendTasks[indexPath.row].completed) {
             cell.doneTickImage.alpha = 0
         } else if (self.friendTasks[indexPath.row].completed){
             cell.doneTickImage.alpha = 1
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            print(friendTasks[indexPath.row].title)
+            self.friendTasks.remove(at: indexPath.row)
+            print(friendTasks[indexPath.row].title)
+            updateTasks()
+            print("indexPath \(indexPath.row)")
+        }
     }
 }
