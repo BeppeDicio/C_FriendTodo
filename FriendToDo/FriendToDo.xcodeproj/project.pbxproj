@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D9B4B8BC26DE095400FF3306 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8BB26DE095400FF3306 /* AppDelegate.swift */; };
 		D9B4B8BE26DE095400FF3306 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8BD26DE095400FF3306 /* SceneDelegate.swift */; };
-		D9B4B8C026DE095400FF3306 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8BF26DE095400FF3306 /* ViewController.swift */; };
 		D9B4B8C326DE095400FF3306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B4B8C126DE095400FF3306 /* Main.storyboard */; };
 		D9B4B8C526DE095600FF3306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9B4B8C426DE095600FF3306 /* Assets.xcassets */; };
 		D9B4B8C826DE095600FF3306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B4B8C626DE095600FF3306 /* LaunchScreen.storyboard */; };
@@ -44,7 +43,6 @@
 		D9B4B8B826DE095400FF3306 /* FriendToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B4B8BB26DE095400FF3306 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9B4B8BD26DE095400FF3306 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D9B4B8BF26DE095400FF3306 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9B4B8C226DE095400FF3306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9B4B8C426DE095600FF3306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9B4B8C726DE095600FF3306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,19 +109,16 @@
 		D9B4B8BA26DE095400FF3306 /* FriendToDo */ = {
 			isa = PBXGroup;
 			children = (
-				D9B4B8BB26DE095400FF3306 /* AppDelegate.swift */,
-				D9B4B8BD26DE095400FF3306 /* SceneDelegate.swift */,
-				D9B4B8BF26DE095400FF3306 /* ViewController.swift */,
-				D9B4B8EB26DE485400FF3306 /* HomePage.swift */,
-				D9B4B8C126DE095400FF3306 /* Main.storyboard */,
-				D9B4B8C426DE095600FF3306 /* Assets.xcassets */,
-				D9B4B8C626DE095600FF3306 /* LaunchScreen.storyboard */,
+				D9B4B8FA26DF905C00FF3306 /* Globals */,
+				D9B4B8F926DF902100FF3306 /* Controller */,
+				D9B4B8F826DF8FED00FF3306 /* View */,
+				D9B4B8F726DF8FDB00FF3306 /* Model */,
 				D9B4B8C926DE095600FF3306 /* Info.plist */,
-				D9B4B8ED26DF6A7300FF3306 /* CustomFriendTableViewCell.swift */,
-				D9B4B8EF26DF732800FF3306 /* DataReciver.swift */,
-				D9B4B8F126DF734C00FF3306 /* Friend.swift */,
-				D9B4B8F326DF7E3A00FF3306 /* GlobalUtility.swift */,
-				D9B4B8F526DF8B2A00FF3306 /* ToDo.swift */,
+				D9B4B8BD26DE095400FF3306 /* SceneDelegate.swift */,
+				D9B4B8BB26DE095400FF3306 /* AppDelegate.swift */,
+				D9B4B8C426DE095600FF3306 /* Assets.xcassets */,
+				D9B4B8C126DE095400FF3306 /* Main.storyboard */,
+				D9B4B8C626DE095600FF3306 /* LaunchScreen.storyboard */,
 			);
 			path = FriendToDo;
 			sourceTree = "<group>";
@@ -144,6 +139,41 @@
 				D9B4B8DF26DE095600FF3306 /* Info.plist */,
 			);
 			path = FriendToDoUITests;
+			sourceTree = "<group>";
+		};
+		D9B4B8F726DF8FDB00FF3306 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9B4B8F126DF734C00FF3306 /* Friend.swift */,
+				D9B4B8F526DF8B2A00FF3306 /* ToDo.swift */,
+			);
+			name = Model;
+			path = "Modelù";
+			sourceTree = "<group>";
+		};
+		D9B4B8F826DF8FED00FF3306 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9B4B8ED26DF6A7300FF3306 /* CustomFriendTableViewCell.swift */,
+				D9B4B8EB26DE485400FF3306 /* HomePage.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9B4B8F926DF902100FF3306 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D9B4B8EF26DF732800FF3306 /* DataReciver.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D9B4B8FA26DF905C00FF3306 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				D9B4B8F326DF7E3A00FF3306 /* GlobalUtility.swift */,
+			);
+			path = Globals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +309,6 @@
 				D9B4B8F626DF8B2A00FF3306 /* ToDo.swift in Sources */,
 				D9B4B8EE26DF6A7300FF3306 /* CustomFriendTableViewCell.swift in Sources */,
 				D9B4B8F226DF734C00FF3306 /* Friend.swift in Sources */,
-				D9B4B8C026DE095400FF3306 /* ViewController.swift in Sources */,
 				D9B4B8F426DF7E3A00FF3306 /* GlobalUtility.swift in Sources */,
 				D9B4B8F026DF732800FF3306 /* DataReciver.swift in Sources */,
 				D9B4B8BC26DE095400FF3306 /* AppDelegate.swift in Sources */,
