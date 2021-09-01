@@ -16,6 +16,7 @@
 		D9B4B8D326DE095600FF3306 /* FriendToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8D226DE095600FF3306 /* FriendToDoTests.swift */; };
 		D9B4B8DE26DE095600FF3306 /* FriendToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8DD26DE095600FF3306 /* FriendToDoUITests.swift */; };
 		D9B4B8EC26DE485400FF3306 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8EB26DE485400FF3306 /* HomePage.swift */; };
+		D9B4B8EE26DF6A7300FF3306 /* CustomFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8ED26DF6A7300FF3306 /* CustomFriendTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D9B4B8DD26DE095600FF3306 /* FriendToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendToDoUITests.swift; sourceTree = "<group>"; };
 		D9B4B8DF26DE095600FF3306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9B4B8EB26DE485400FF3306 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		D9B4B8ED26DF6A7300FF3306 /* CustomFriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFriendTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				D9B4B8C426DE095600FF3306 /* Assets.xcassets */,
 				D9B4B8C626DE095600FF3306 /* LaunchScreen.storyboard */,
 				D9B4B8C926DE095600FF3306 /* Info.plist */,
+				D9B4B8ED26DF6A7300FF3306 /* CustomFriendTableViewCell.swift */,
 			);
 			path = FriendToDo;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B4B8EE26DF6A7300FF3306 /* CustomFriendTableViewCell.swift in Sources */,
 				D9B4B8C026DE095400FF3306 /* ViewController.swift in Sources */,
 				D9B4B8BC26DE095400FF3306 /* AppDelegate.swift in Sources */,
 				D9B4B8BE26DE095400FF3306 /* SceneDelegate.swift in Sources */,
