@@ -70,6 +70,16 @@ class HomePage: UIViewController, UITableViewDataSource {
         cell.toDosLabel.text = "You have \(count) with this friend!"
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "TodoListSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tabCtrl: UITabBarController = segue.destination as! UITabBarController
+        let vc = tabCtrl.viewControllers![0] as! TodoListView
+        vc.friend = friendsList[self.tableView.indexPathForSelectedRow!.row]
+    }
 }
 

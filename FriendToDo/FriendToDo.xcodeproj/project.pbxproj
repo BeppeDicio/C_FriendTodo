@@ -20,6 +20,8 @@
 		D9B4B8F226DF734C00FF3306 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8F126DF734C00FF3306 /* Friend.swift */; };
 		D9B4B8F426DF7E3A00FF3306 /* GlobalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8F326DF7E3A00FF3306 /* GlobalUtility.swift */; };
 		D9B4B8F626DF8B2A00FF3306 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8F526DF8B2A00FF3306 /* ToDo.swift */; };
+		D9B4B8FC26DF93D300FF3306 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8FB26DF93D300FF3306 /* TodoListView.swift */; };
+		D9B4B8FE26DF93E000FF3306 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B4B8FD26DF93E000FF3306 /* AddTodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		D9B4B8F126DF734C00FF3306 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		D9B4B8F326DF7E3A00FF3306 /* GlobalUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUtility.swift; sourceTree = "<group>"; };
 		D9B4B8F526DF8B2A00FF3306 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		D9B4B8FB26DF93D300FF3306 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		D9B4B8FD26DF93E000FF3306 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 			children = (
 				D9B4B8ED26DF6A7300FF3306 /* CustomFriendTableViewCell.swift */,
 				D9B4B8EB26DE485400FF3306 /* HomePage.swift */,
+				D9B4B8FB26DF93D300FF3306 /* TodoListView.swift */,
+				D9B4B8FD26DF93E000FF3306 /* AddTodoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,9 +312,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B4B8FC26DF93D300FF3306 /* TodoListView.swift in Sources */,
 				D9B4B8F626DF8B2A00FF3306 /* ToDo.swift in Sources */,
 				D9B4B8EE26DF6A7300FF3306 /* CustomFriendTableViewCell.swift in Sources */,
 				D9B4B8F226DF734C00FF3306 /* Friend.swift in Sources */,
+				D9B4B8FE26DF93E000FF3306 /* AddTodoView.swift in Sources */,
 				D9B4B8F426DF7E3A00FF3306 /* GlobalUtility.swift in Sources */,
 				D9B4B8F026DF732800FF3306 /* DataReciver.swift in Sources */,
 				D9B4B8BC26DE095400FF3306 /* AppDelegate.swift in Sources */,
