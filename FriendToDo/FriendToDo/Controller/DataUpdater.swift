@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class DataUpdater {
+    //TODO: Create al the api methods that are going to update the data about the Friends list, tasks
+}

@@ -35,29 +35,5 @@ class FriendToDoRequirementsTests: XCTestCase {
         //call: DataReciver.parseFreindApiResult(data), the method that parse the Data into the list ToDo
         //Use the AssertEqual method to check the given list ToDo Obj with the Expected one
     }
-    
-    func testAddToDoTask_withSuccess(){
-        
-    }
-    
-    func testAddToDoTask_withFail(){
-        
-    }
-    
-    func testCancelToDoTask_withSuccess(){
-        
-    }
-    
-    func testCancelToDoTask_withFail(){
-        
-    }
-    
-    func testCompleteToDoTask_withSuccess(){
-        
-    }
-    
-    func testCompleteToDoTask_withFail(){
-        
-    }
 
 }
