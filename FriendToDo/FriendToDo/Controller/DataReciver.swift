@@ -10,32 +10,21 @@ import Foundation
 class DataReciver {
     
     //TODO: refactor this class to deleta the dependency on the HomePage class
-    public func getUserData(urlString: String, context: HomePage){
+    public func getFriendsData(urlString: String, context: HomePage){
         
         var friends = [Friend]()
-        let decoder = JSONDecoder()
         var friendsData = Data()
         
         
-        let urlStringTest = URL(string: urlString)!
+        let urlStringFormatted = URL(string: urlString)!
 
-        let task = URLSession.shared.dataTask(with: urlStringTest) {(data, response, error) in
+        let task = URLSession.shared.dataTask(with: urlStringFormatted) {(data, response, error) in
             guard let data = data else { return }
             friendsData = data
-            print(String(data: data, encoding: .utf8)!)
+            //print(String(data: data, encoding: .utf8)!)
             
-            if !friendsData.isEmpty {
-                do {
-                    friends = try decoder.decode([Friend].self, from: friendsData)
-                    context.updateTV(data: friends)
-                    //print(friends[0].id)
-                } catch {
-                    //TODO: manage loading error
-                    print(error)
-                }
-            } else {
-                //TODO: empty friends list
-            }
+            friends = self.parseFreindApiResult(data: friendsData)
+            context.updateTV(data: friends)
         }
         
         task.resume()
@@ -45,30 +34,62 @@ class DataReciver {
     public func getFriendTasks(urlString: String, context: HomePage){
         
         var toDos = [ToDo]()
-        let decoder = JSONDecoder()
         var toDoData = Data()
         
         
-        let urlStringTest = URL(string: urlString)!
+        let urlStringFormatted = URL(string: urlString)!
 
-        let task = URLSession.shared.dataTask(with: urlStringTest) {(data, response, error) in
+        let task = URLSession.shared.dataTask(with: urlStringFormatted) {(data, response, error) in
             guard let data = data else { return }
             toDoData = data
             print(String(data: data, encoding: .utf8)!)
             
-            if !toDoData.isEmpty {
-                do {
-                    toDos = try decoder.decode([ToDo].self, from: toDoData)
-                    context.updateToDosTV(data: toDos)
-                } catch {
-                    //TODO: manage loading error
-                    print(error)
-                }
-            } else {
-                //TODO: empty friends list
-            }
+            toDos = self.parseFreindApiResult(data: toDoData)
+            context.updateToDosTV(data: toDos)
+               
         }
         
         task.resume()
+    }
+    
+    func parseFreindApiResult(data: Data) -> [ToDo]{
+        
+        var toDos = [ToDo]()
+        let decoder = JSONDecoder()
+        
+        if !data.isEmpty {
+            do {
+                toDos = try decoder.decode([ToDo].self, from: data)
+                return toDos
+            } catch {
+                //TODO: manage loading error
+                print(error)
+                return []
+            }
+        } else {
+            //TODO: empty friends list
+            return []
+        }
+    }
+    
+    func parseFreindApiResult(data: Data) -> [Friend]{
+        
+        var friends = [Friend]()
+        let decoder = JSONDecoder()
+        
+        if !data.isEmpty {
+            do {
+                friends = try decoder.decode([Friend].self, from: data)
+                return friends
+                //print(friends[0].id)
+            } catch {
+                //TODO: manage loading error
+                print(error)
+                return []
+            }
+        } else {
+            //TODO: empty friends list
+            return []
+        }
     }
 }

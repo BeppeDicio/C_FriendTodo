@@ -18,19 +18,22 @@ class FriendToDoRequirementsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testGetFriendsList_withSuccess(){
+    func testFriendsApiResultParsing(){
         
-        var listFriends: [Friend] = []
-        let expectedFriendsList: [Friend] = []
-        
-        listFriends = getFriendsList()
-        
-        XCTAssertFalse(listFriends, expectedFriendsList)
+        //TODO:
+        //Create a list Friend Obj you expect passing the Data to the parse method
+        //Mock Data obj. that represent a valid api response
+        //call: DataReciver.parseFreindApiResult(data), the method that parse the Data into the list FriendObj
+        //Use the AssertEqual method to check the given list Freind Obj with the Expected one
         
     }
     
-    func testGetFriendsList_withFail(){
-        
+    func testFriendsTaskApiResultParsing(){
+        //TODO:
+        //Create a list ToDo Obj you expect passing the Data to the parse method
+        //Mock Data obj. that represent a valid api response
+        //call: DataReciver.parseFreindApiResult(data), the method that parse the Data into the list ToDo
+        //Use the AssertEqual method to check the given list ToDo Obj with the Expected one
     }
     
     func testAddToDoTask_withSuccess(){

@@ -21,7 +21,7 @@ class HomePage: UIViewController, UITableViewDataSource {
         let dataReciver = DataReciver()
         tableView.dataSource = self
     
-        dataReciver.getUserData(urlString: Urls.FriendsURL, context: self)
+        dataReciver.getFriendsData(urlString: Urls.FriendsURL, context: self)
         dataReciver.getFriendTasks(urlString: Urls.ToDoURL, context: self)
         
     }
